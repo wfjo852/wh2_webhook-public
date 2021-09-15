@@ -44,7 +44,7 @@ def task(hook_action,hook_data):
         import os,datetime
         url = r'/www/test'
         os.chdir(url)
-        os.mkdir(str(datetime.datetime.now))
+        os.mkdir(hook_data)
         return ""
     elif hook_action == 'stop':
         return ""

@@ -1,4 +1,4 @@
-FROM python
+FROM python:3.7
 
 ADD . /www
 WORKDIR /www

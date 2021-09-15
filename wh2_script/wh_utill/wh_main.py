@@ -43,6 +43,10 @@ def task(hook_action,hook_data):
     elif hook_action == 'status update':
         return ""
     elif hook_action == 'start':
+        import os,datetime
+        url = r'/home/nas_test'
+        os.chdir(url)
+        os.mkdir(str(datetime.datetime.now))
         return ""
     elif hook_action == 'stop':
         return ""

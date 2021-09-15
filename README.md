@@ -1,45 +1,71 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+#Wh2-WebHook Setting
+## Docker install -- centos 7이상
+**자세한 설명은 [docker install](https://docs.docker.com/engine/install/centos/)에 있습니다.**
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+Centos는 Root를 기준으로 설명 되어 있습니다.
+###Set up the repository
+도커의 리포지토리를 추가합니다. 
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+```shell script
+ yum install -y yum-utils
+ yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+```
+
+### Install Docker
+최신버젼으로 설치 시
+```shell script
+ yum install docker-ce docker-ce-cli containerd.io
+```
+특정 버젼으로 설치 시 
+```shell script
+yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
+```
+
+###Docker Start 및 Docker 자동 실행 세팅
+```shell script
+systemctl start docker
+systemctl enable docker
+```
+---
+
+##Docker-compose
+**Docker Compose는 여러개의 컨테이너를 연동시켜주는 기능을 합니다.
+ 자세한 설명은 [docker-compose install](https://docs.docker.com/compose/install/)에 있습니다.**
+
+
+### Install Docker-cmpose
+```shell script
+curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
+
+###Docker-compose 설치 확인
+```shell script
+docker-compose --version
+'docker-compose version 1.29.2, build 1110ad01'
+```
 
 ---
 
-## Edit a file
+#python Flask 설치법
+모든 버젼은 최신버전이 설치 됩니다.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+###C2Monster 제공 코드 다운로드
+```shell script
+cd /home
+git clone https://github.com/wfjo852/wh2-webhook-public.git
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+``` 
 
----
-
-## Create a file
-
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
-
----
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+###python의 Flask Server Run
+```shell script
+cd /home/wh2-webhook-public/docker
+docker-compose up
+``` 
+###종료를 원할때 명령어
+```shell script
+cd /home/wh2-webhook-public/docker
+docker-compose down
+```

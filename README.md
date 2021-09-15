@@ -23,7 +23,7 @@ Centos는 Root를 기준으로 설명 되어 있습니다.
 yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
 ```
 
-###Docker Start 및 Docker 자동 실행 세팅
+### Docker Start 및 Docker 자동 실행 세팅
 ```shell script
 systemctl start docker
 systemctl enable docker

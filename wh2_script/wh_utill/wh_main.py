@@ -1,6 +1,3 @@
-from . import wh_controll
-from . import wh_email, infomation
-
 
 def project(hook_action,hook_data):
     if hook_action == 'create':
@@ -43,8 +40,9 @@ def task(hook_action,hook_data):
     elif hook_action == 'status update':
         return ""
     elif hook_action == 'start':
+        print(hook_data)
         import os,datetime
-        url = r'/home/nas_test'
+        url = r'/www/test'
         os.chdir(url)
         os.mkdir(str(datetime.datetime.now))
         return ""

@@ -1,11 +1,7 @@
 #-*- coding:utf-8 -*-
-import json
-import imp
-import os
 
 from flask import Flask, request
-import webbrowser
-from wh2_script.wh_utill import wh_filemanage, wh_controll
+from wh2_script.wh_utill import wh_filemanage
 from wh2_script.wh_rocket_chat import rocket_chat_main
 from wh2_script.wh_utill import wh_main
 
@@ -64,7 +60,7 @@ def hook():
 
 @app.route('/monitor',methods=['POST'])
 def monitor():
-
+    print('test')
     result = request.get_json()
 
     print(result)

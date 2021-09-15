@@ -1,0 +1,42 @@
+version: '3'
+services:
+
+  flask:
+      container_name: wh2hook_script
+      build : ./init/flask_uwsgi
+      image: c2monster/wh2hook_script:1.0
+      volumes:
+        - ../wh2_script:/www/src/wh2_script
+      ports:
+        - "5000:5000"
+      networks:
+        - backend
+      links:
+        - db
+
+  nginx:
+      container_name: wh2hook_nginx
+      build: ./init/nginx
+      image: c2monster/wh2hook_nginx:1.0
+      ports:
+       - "80:80"
+      networks:
+       - backend
+      links:
+        - db
+
+  db:
+    container_name: wh2hook_db
+    image: mariadb
+
+    ports:
+      - "5500:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./init/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  backend:
+    driver: bridge
+

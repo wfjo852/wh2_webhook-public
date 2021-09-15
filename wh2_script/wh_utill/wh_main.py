@@ -40,11 +40,11 @@ def task(hook_action,hook_data):
     elif hook_action == 'status update':
         return ""
     elif hook_action == 'start':
-        print(hook_data)
-        import os,datetime
+        folder = str(hook_data['task']['kind']) + str(hook_data['task']['idx'])
+        import os
         url = r'/www/test'
         os.chdir(url)
-        os.mkdir(hook_data)
+        os.mkdir(folder)
         return ""
     elif hook_action == 'stop':
         return ""

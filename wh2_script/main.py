@@ -74,5 +74,4 @@ def monitor():
 def ip_check():
     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     print("client IP : "+ip)
-    webbrowser.open_new('http://211.60.77.119')
     return ip

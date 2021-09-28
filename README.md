@@ -69,3 +69,24 @@ docker-compose up
 cd /home/wh2-webhook-public/docker
 docker-compose down
 ```
+
+# WebHook Check
+
+## WebHook Test(IP)
+** 웹 브라우져에 [http://{Webhook Server ip}/ip]()로 접속 하면 접속한 사람의 IP를 브라우져에 띄워 주는걸 확인 할 수 있습니다. **
+
+
+## WebHook Test(Wormhole Monitor)
+** 웹훅이 제대로 작동 되고 있는지 확인하는 예시 **
+1. 웜홀 >> system infomation >> Webhook server에 들어가서 ADD 후 [http://{Webhook Server ip}/monitor]()를 입력
+2. 트리거 세팅을 원하는 것으로 체크하고 저장 한다.  
+
+## WebHook Test(Wormhole Hook)
+** 웹훅이 작동될때 스크립트가 작동 시키는 예시 **
+1. 웜홀 >> system infomation >> Webhook server에 들어가서 ADD 후 [http://{Webhook Server ip}/hook]()를 입력
+2. 트리거 세팅을 원하는 것으로 체크하고 저장한다.
+3. 파이썬 스크립트를 작성해서 넣는다.
+4. 실행 시키면 스크립트가 실행되며 자동으로 처리된다. 
+  
+
+

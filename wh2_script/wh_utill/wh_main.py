@@ -40,10 +40,10 @@ def task(hook_action,hook_data):
     elif hook_action == 'status update':
         return ""
     elif hook_action == 'start':
-        folder = str(hook_data['task']['kind']) + str(hook_data['task']['idx'])
         import os
-        url = r'/www/test'
-        os.chdir(url)
+        folder =f"{str(hook_data['task']['kind'])}_{str(hook_data['task']['idx'])}"
+        mount_path = r'/www/nas_mount'
+        os.chdir(mount_path)
         os.mkdir(folder)
         return ""
     elif hook_action == 'stop':

@@ -60,7 +60,7 @@ def hook():
 
 @app.route('/monitor',methods=['POST'])
 def monitor():
-    print('test')
+    print('nas_mount')
     result = request.get_json()
 
     print(result)

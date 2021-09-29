@@ -73,16 +73,16 @@ docker-compose down
 # WebHook Check
 
 ## WebHook Test(IP)
-** 웹 브라우져에 [http://{Webhook Server ip}/ip]()로 접속 하면 접속한 사람의 IP를 브라우져에 띄워 주는걸 확인 할 수 있습니다. **
+**웹 브라우져에 [http://{Webhook Server ip}/ip]()로 접속 하면 접속한 사람의 IP를 브라우져에 띄워 주는걸 확인 할 수 있습니다.**
 
 
 ## WebHook Test(Wormhole Monitor)
-** 웹훅이 제대로 작동 되고 있는지 확인하는 예시 **
+**웹훅이 제대로 작동 되고 있는지 확인하는 예시**
 1. 웜홀 >> system infomation >> Webhook server에 들어가서 ADD 후 [http://{Webhook Server ip}/monitor]()를 입력
 2. 트리거 세팅을 원하는 것으로 체크하고 저장 한다.  
 
 ## WebHook Test(Wormhole Hook)
-** 웹훅이 작동될때 스크립트가 작동 시키는 예시 **
+**웹훅이 작동될때 스크립트가 작동 시키는 예시**
 1. 웜홀 >> system infomation >> Webhook server에 들어가서 ADD 후 [http://{Webhook Server ip}/hook]()를 입력
 2. 트리거 세팅을 원하는 것으로 체크하고 저장한다.
 3. 파이썬 스크립트를 작성해서 넣는다.
@@ -98,7 +98,7 @@ yum install cifs-utils
 ```
 
 ### 마운트 명령어
-** 파일서버 마다 세팅이 다를 수 있음 **
+**파일서버 마다 세팅이 다를 수 있음**
 ```shell script
 mount -t cifs {파일서버 경로} /home/wh2-webhook-public/nas_mount/ -o user='{ID}',sec=utlm,vers=1.0
 ```

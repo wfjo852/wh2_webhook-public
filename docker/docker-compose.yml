@@ -7,7 +7,7 @@ services:
       image: c2monster/wh2hook_script:1.0
       volumes:
         - ../wh2_script:/www/src/wh2_script
-        - ../nas_mouont:/www/nas_mount
+        - ../nas_mount:/www/nas_mount
       ports:
         - "5000:5000"
       networks:

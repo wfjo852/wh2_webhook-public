@@ -90,3 +90,18 @@ docker-compose down
   
 
 
+# Fileserver <> Mount Test
+
+### 필요 패키지설치
+```shell script
+yum install cifs-utils
+```
+
+### 마운트 명령어
+** 파일서버 마다 세팅이 다를 수 있음 **
+```shell script
+mount -t cifs {파일서버 경로} /home/wh2-webhook-public/nas_mount/ -o user='{ID}',sec=utlm,vers=1.0
+```
+
+
+
